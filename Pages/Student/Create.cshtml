@@ -1,38 +1,41 @@
 ﻿@page
 @model StudentFormApp.Pages.Student.CreateModel
 
-<h2>Student Application Form</h2>
+<div class="form-container">
+    <h2>Student Application</h2>
 
-@if (!string.IsNullOrEmpty(Model.SuccessMessage))
-{
-    <p><b>@Model.SuccessMessage</b></p>
-}
+    @if (!string.IsNullOrEmpty(Model.SuccessMessage))
+    {
+        <div class="success-message">
+            @Model.SuccessMessage
+        </div>
+    }
 
-<form method="post">
-    <div>
-        <label asp-for="Form.Name"></label><br />
-        <input asp-for="Form.Name" />
-        <span asp-validation-for="Form.Name"></span>
-    </div>
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="Form.Name"></label>
+            <input asp-for="Form.Name" />
+            <span asp-validation-for="Form.Name"></span>
+        </div>
 
-    <div>
-        <label asp-for="Form.Number"></label><br />
-        <input asp-for="Form.Number" />
-        <span asp-validation-for="Form.Number"></span>
-    </div>
+        <div class="form-group">
+            <label asp-for="Form.Number"></label>
+            <input asp-for="Form.Number" />
+            <span asp-validation-for="Form.Number"></span>
+        </div>
 
-    <div>
-        <label asp-for="Form.Email"></label><br />
-        <input asp-for="Form.Email" />
-        <span asp-validation-for="Form.Email"></span>
-    </div>
+        <div class="form-group">
+            <label asp-for="Form.Email"></label>
+            <input asp-for="Form.Email" />
+            <span asp-validation-for="Form.Email"></span>
+        </div>
 
-    <div>
-        <label asp-for="Form.Dob"></label><br />
-        <input asp-for="Form.Dob" type="date" />
-        <span asp-validation-for="Form.Dob"></span>
-    </div>
+        <div class="form-group">
+            <label asp-for="Form.Dob"></label>
+            <input asp-for="Form.Dob" type="date" />
+            <span asp-validation-for="Form.Dob"></span>
+        </div>
 
-    <br />
-    <button type="submit">Submit</button>
-</form>
+        <button type="submit">Submit</button>
+    </form>
+</div>
